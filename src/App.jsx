@@ -32,10 +32,6 @@ function App() {
     }
   }, []);
 
-  if (numCartItems === null) {
-    return <div>Loading...</div>;
-  }
-
   return (
     <AuthProvider>
       <Router>
