@@ -15,7 +15,7 @@ import PaymentStatusPage from './components/payments/PaymentStatusPage';
 
 function App() {
 
-  const [numCartItems, setNumCartItems] = useState(0);
+  const [numCartItems, setNumCartItems] = useState(null);
   useEffect(() => {
     const cart_code = localStorage.getItem("cart_code");
     if (cart_code) {
@@ -29,6 +29,10 @@ function App() {
         });
     };
   }, []);
+
+  if (numCartItems === null) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <AuthProvider>
