@@ -18,7 +18,7 @@ function App() {
   const [numCartItems, setNumCartItems] = useState(0);
   useEffect(() => {
     const cart_code = localStorage.getItem("cart_code");
-    if (cart_code && numCartItems > 0) {
+    if (cart_code) {
       api.get(`get_cart_stats?cart_code=${cart_code}`)
         .then(response => {
           console.log(response.data);
