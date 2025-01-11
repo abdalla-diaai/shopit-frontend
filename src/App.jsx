@@ -27,7 +27,9 @@ function App() {
         .catch(err => {
           console.log(err.message);
         });
-    };
+    } else {
+      setNumCartItems(0); // New cart with zero items
+    }
   }, []);
 
   if (numCartItems === null) {
